@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  ul
+    li
+      a.active(href='/') Elenco Unità
+    li
+      a(href='/addUnit') Nuova Unità
+    li
+      a(href='/update') Aggiorna Unità
+  br
+  each r in re
+    h1 Unit: #{r.Unit}
+    a(href=`/dettagli/${r.Unit}`)
+      img(src=`/images/${r.Unit}.png`)
+    hr
